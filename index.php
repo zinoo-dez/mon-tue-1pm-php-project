@@ -10,6 +10,7 @@ require "./layouts/carousel.php";
 // get product query
 if (isset($_POST['submit'])) {
     $keyword = $_POST['search'];
+    $keyword = "%$keyword%";
     $sql = "SELECT * FROM products WHERE name LIKE :keyword;";
     $s = $pdo->prepare($sql);
     $s->bindParam(":keyword", $keyword, PDO::PARAM_STR);
@@ -28,7 +29,7 @@ if (isset($_POST['submit'])) {
 ?>
 <div class="p-5 text-center">
     <h2>Products List</h2>
-    <div class="row">
+    <div class="row g-4">
         <?php foreach ($res as $key => $value) : ?>
             <div class="col-sm-12 col-md-4 col-lg-3">
                 <div class="card">
