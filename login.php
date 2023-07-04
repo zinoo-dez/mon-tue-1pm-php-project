@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         if ($email === "admin@admin.com" && $password === "admin") {
             $_SESSION['name'] = "Admin";
             $_SESSION['admin'] = true;
-            header("location:admin/dashboard.php?message=welcome");
+            header("location:admin/dashboard.php");
         } else {
             if ($res) {
                 if (password_verify($password, $res['password'])) {

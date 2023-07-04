@@ -3,18 +3,12 @@ require "../server/db.php";
 require "../layouts/header.php";
 $errors = [];
 if (isset($_POST['product_update'])) {
-    // echo "<pre>";
-    // print_r($_POST);
-    // die();
-    // echo "</pre>";
     $name = trim($_POST['name']);
     $product_id = $_POST['pid'];
     $category_id = $_POST['category_id'];
     $description = trim($_POST['description']);
     $price = $_POST['price'];
     $oldphoto = $_POST['oldphoto'];
-    // print_r($oldphoto);
-    // die();
     $photo = $_FILES['photo'];
     $pname = $_FILES['photo']['name'];
     $tmp_name = $_FILES['photo']['tmp_name'];

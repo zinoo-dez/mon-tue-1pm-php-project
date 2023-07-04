@@ -24,19 +24,18 @@ $p = $s->fetch();
                 $s->execute();
                 $res = $s->fetchAll(PDO::FETCH_ASSOC);
                 foreach ($res as $key => $value) { ?>
-                <?php if ($value['category_id'] === $p['category_id']) : ?>
-                <option selected value="<?= $value['category_id'] ?>" class="form-control">
-                    <?= $value['name'] ?></option>
-                <?php else : ?>
-                <?php endif ?>
-                <option value="<?= $value['category_id'] ?>" class="form-control">
-                    <?= $value['name'] ?></option>
+                    <?php if ($value['category_id'] === $p['category_id']) : ?>
+                        <option selected value="<?= $value['category_id'] ?>" class="form-control">
+                            <?= $value['name'] ?></option>
+                    <?php else : ?>
+                    <?php endif ?>
+                    <option value="<?= $value['category_id'] ?>" class="form-control">
+                        <?= $value['name'] ?></option>
                 <?php } ?>
             </select>
         </div>
         <div class="mb-3">
-            <input type="text" value="<?= $p['name'] ?? "" ?>" required placeholder="Product Name..." name="name"
-                class="form-control">
+            <input type="text" value="<?= $p['name'] ?? "" ?>" required placeholder="Product Name..." name="name" class="form-control">
         </div>
         <div class="mb-3">
             <textarea required name="description" value="" placeholder=" description ...." class="form-control">
@@ -44,8 +43,7 @@ $p = $s->fetch();
             </textarea>
         </div>
         <div class="mb-3">
-            <input type="number" value="<?= $p['price'] ?? "" ?>" required placeholder="Product Price..." name="price"
-                class="form-control">
+            <input type="number" value="<?= $p['price'] ?? "" ?>" required placeholder="Product Price..." name="price" class="form-control">
         </div>
         <div class="mb-3">
         </div>
@@ -54,7 +52,6 @@ $p = $s->fetch();
         <div class="mb-3">
             <label for="photo">Photo</label><br>
             <input type="file" name="photo" accept="image/*" id="photo" class="form-control">
-
         </div>
 
         <input type="submit" class="btn btn-primary" name="product_update">
