@@ -24,6 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         // print_r($res['password']);
         // die();
         if ($email === "admin@admin.com" && $password === "admin") {
+            $_SESSION['name'] = "Admin";
+            $_SESSION['admin'] = true;
             header("location:admin/dashboard.php?message=welcome");
         } else {
             if ($res) {
